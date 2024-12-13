@@ -34,12 +34,17 @@ public class examen2_p2_miguelmoran extends javax.swing.JFrame {
         Ensamblaje_lbl = new javax.swing.JLabel();
         Pintura_lbl = new javax.swing.JLabel();
         Empaquetado_lbl = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel1 = new javax.swing.JLabel();
+        Ciclo_progress = new javax.swing.JProgressBar();
+        Ciclo_lbl = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         Iniciar_btn.setText("Iniciar");
+        Iniciar_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Iniciar_btnActionPerformed(evt);
+            }
+        });
 
         Cargar_btn.setText("Cargar Archivo");
         Cargar_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -54,7 +59,7 @@ public class examen2_p2_miguelmoran extends javax.swing.JFrame {
 
         Empaquetado_lbl.setText("Empaquetado:");
 
-        jLabel1.setText("Ciclo Dia/Noche:");
+        Ciclo_lbl.setText("Ciclo Dia/Noche:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,17 +79,17 @@ public class examen2_p2_miguelmoran extends javax.swing.JFrame {
                         .addComponent(Pintura_progress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Ensamblaje_progress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Pintura_lbl)
-                        .addComponent(jProgressBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jLabel1))
+                        .addComponent(Ciclo_progress, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(Ciclo_lbl))
                 .addContainerGap(313, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(67, 67, 67)
-                .addComponent(jLabel1)
+                .addComponent(Ciclo_lbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Ciclo_progress, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Ensamblaje_lbl)
                 .addGap(18, 18, 18)
@@ -118,6 +123,10 @@ public class examen2_p2_miguelmoran extends javax.swing.JFrame {
         } catch (FileNotFoundException ex) {
         }
     }//GEN-LAST:event_Cargar_btnActionPerformed
+
+    private void Iniciar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Iniciar_btnActionPerformed
+        Thread
+    }//GEN-LAST:event_Iniciar_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,6 +165,8 @@ public class examen2_p2_miguelmoran extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cargar_btn;
+    private javax.swing.JLabel Ciclo_lbl;
+    private javax.swing.JProgressBar Ciclo_progress;
     private javax.swing.JProgressBar Empaquetado_Progress;
     private javax.swing.JLabel Empaquetado_lbl;
     private javax.swing.JLabel Ensamblaje_lbl;
@@ -163,7 +174,5 @@ public class examen2_p2_miguelmoran extends javax.swing.JFrame {
     private javax.swing.JButton Iniciar_btn;
     private javax.swing.JLabel Pintura_lbl;
     private javax.swing.JProgressBar Pintura_progress;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }
