@@ -6,14 +6,12 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.ArrayList;
 
 public class examen2_p2_miguelmoran extends javax.swing.JFrame {
 
     File file = new File("fabrica.txt");
-    Array
+    ArrayList<Etapa> etapas = new ArrayList<>();
     
     public examen2_p2_miguelmoran() {
         initComponents();
@@ -113,7 +111,9 @@ public class examen2_p2_miguelmoran extends javax.swing.JFrame {
         try {
             Scanner entrada = new Scanner(file);
             while(entrada.hasNextLine()){
-                
+                String[] info = entrada.nextLine().split(",");
+                Etapa etapa = new Etapa(info[0], Integer.parseInt(info[1]), Integer.parseInt(info[2]));
+                etapas.add(etapa);
             }
         } catch (FileNotFoundException ex) {
         }
