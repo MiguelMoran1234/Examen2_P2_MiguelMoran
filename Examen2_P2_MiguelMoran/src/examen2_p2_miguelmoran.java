@@ -3,15 +3,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-/**
- *
- * @author flash
- */
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+
 public class examen2_p2_miguelmoran extends javax.swing.JFrame {
 
-    /**
-     * Creates new form examen2_p2_miguelmoran
-     */
+    File file = new File("fabrica.txt");
+    Array
+    
     public examen2_p2_miguelmoran() {
         initComponents();
     }
@@ -25,21 +28,96 @@ public class examen2_p2_miguelmoran extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Ensamblaje_progress = new javax.swing.JProgressBar();
+        Pintura_progress = new javax.swing.JProgressBar();
+        Empaquetado_Progress = new javax.swing.JProgressBar();
+        Iniciar_btn = new javax.swing.JButton();
+        Cargar_btn = new javax.swing.JButton();
+        Ensamblaje_lbl = new javax.swing.JLabel();
+        Pintura_lbl = new javax.swing.JLabel();
+        Empaquetado_lbl = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Iniciar_btn.setText("Iniciar");
+
+        Cargar_btn.setText("Cargar Archivo");
+        Cargar_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Cargar_btnActionPerformed(evt);
+            }
+        });
+
+        Ensamblaje_lbl.setText("Ensamblaje:");
+
+        Pintura_lbl.setText("Pintura:");
+
+        Empaquetado_lbl.setText("Empaquetado:");
+
+        jLabel1.setText("Ciclo Dia/Noche:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(301, 301, 301)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(Ensamblaje_lbl)
+                        .addComponent(Empaquetado_lbl)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(Iniciar_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                            .addComponent(Cargar_btn))
+                        .addComponent(Empaquetado_Progress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Pintura_progress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Ensamblaje_progress, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(Pintura_lbl)
+                        .addComponent(jProgressBar1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel1))
+                .addContainerGap(313, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Ensamblaje_lbl)
+                .addGap(18, 18, 18)
+                .addComponent(Ensamblaje_progress, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Pintura_lbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Pintura_progress, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Empaquetado_lbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Empaquetado_Progress, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Iniciar_btn)
+                    .addComponent(Cargar_btn))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Cargar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cargar_btnActionPerformed
+        try {
+            Scanner entrada = new Scanner(file);
+            while(entrada.hasNextLine()){
+                
+            }
+        } catch (FileNotFoundException ex) {
+        }
+    }//GEN-LAST:event_Cargar_btnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -77,5 +155,15 @@ public class examen2_p2_miguelmoran extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Cargar_btn;
+    private javax.swing.JProgressBar Empaquetado_Progress;
+    private javax.swing.JLabel Empaquetado_lbl;
+    private javax.swing.JLabel Ensamblaje_lbl;
+    private javax.swing.JProgressBar Ensamblaje_progress;
+    private javax.swing.JButton Iniciar_btn;
+    private javax.swing.JLabel Pintura_lbl;
+    private javax.swing.JProgressBar Pintura_progress;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JProgressBar jProgressBar1;
     // End of variables declaration//GEN-END:variables
 }
