@@ -112,7 +112,7 @@ public class examen2_p2_miguelmoran extends javax.swing.JFrame {
             Scanner entrada = new Scanner(file);
             while(entrada.hasNextLine()){
                 String[] info = entrada.nextLine().split(",");
-                Etapa etapa = new Etapa(info[0], Integer.parseInt(info[1]), Integer.parseInt(info[2]));
+                Etapa etapa = new Etapa(info[0], Integer.parseInt(info[1]), Integer.parseInt(info[2])*1000);
                 etapas.add(etapa);
             }
         } catch (FileNotFoundException ex) {
