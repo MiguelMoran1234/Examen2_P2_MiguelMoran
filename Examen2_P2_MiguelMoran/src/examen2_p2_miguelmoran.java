@@ -7,10 +7,13 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class examen2_p2_miguelmoran extends javax.swing.JFrame {
 
     File file = new File("fabrica.txt");
+    int elementos = 0;
     ArrayList<Etapa> etapas = new ArrayList<>();
     
     public examen2_p2_miguelmoran() {
@@ -125,7 +128,39 @@ public class examen2_p2_miguelmoran extends javax.swing.JFrame {
     }//GEN-LAST:event_Cargar_btnActionPerformed
 
     private void Iniciar_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Iniciar_btnActionPerformed
-        Thread
+        Thread ensamble = new Thread(){
+            public void run(){
+                try {
+                    Thread.sleep(etapas.get(0).getTiempo());
+                } catch (InterruptedException ex) {
+                }
+                elementos += 1;
+                Ensamblaje_progress.setValue(elementos*etapas.get(0).getUnidades()/100);
+            }
+        };
+        Thread pintura = new Thread(){
+            public void run(){
+                try {
+                    Thread.sleep(etapas.get(1).getTiempo());
+                } catch (InterruptedException ex) {
+                }
+                Ensamblaje_progress.setValue(elementos*etapas.get(0).getUnidades()/100);
+            }
+        };
+        Thread Ciclo = new Thread(){
+            public void run(){
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException ex) {
+                }
+                if(Thread.interrupted()){
+                    
+                } else {
+                    ensamble.start();
+                }
+            }
+        };
+        Ciclo.start();
     }//GEN-LAST:event_Iniciar_btnActionPerformed
 
     /**

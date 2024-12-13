@@ -17,5 +17,17 @@ public class Etapa {
         this.unidades = unidades;
         this.tiempo = tiempo;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getUnidades() {
+        return unidades;
+    }
+
+    public int getTiempo() {
+        return tiempo;
+    }
     
 }
